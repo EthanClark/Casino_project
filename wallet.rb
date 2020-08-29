@@ -1,0 +1,4 @@
+
+
+class Wallet
+  def wallet 
