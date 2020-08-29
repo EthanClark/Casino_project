@@ -9,6 +9,7 @@
 require_relative 'card'
 require_relative 'deck'
 require_relative 'dice'
+require_relative 'hilo'
 def welcome
   puts 'Welcome to the best Casino ever!'
   puts 'What is your name?'
@@ -29,7 +30,8 @@ def menu
     play_slots
     menu
   elsif user_choice === 3
-    play_hilo
+    hilo = Hilo.new(@money)
+    hilo.play_hilo
     menu
   elsif user_choice === 4
     puts 'Better luck next time.'
