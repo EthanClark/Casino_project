@@ -28,13 +28,15 @@ EOF
   puts 'Welcome to the best Casino ever!'
   puts 'What is your name?'
   @user_name = gets.chomp
+  puts 'How much money would you like to deposit?'
+  @money = gets.chomp.to_f
 end
 def menu
   puts "____________________________"
   puts 'MAIN MENU'
-  puts "What would you like to do #{@user_name.capitalize}:"
+  puts "What would you like to do #{@user_name}:"
   puts "____________________________"
-  puts '1) See your cash stack'
+  puts '1) Personal wallet'
   puts '2) Play Slots'
   puts '3) Play Heads & Tails'
   puts '4) Play Double or Nothing'
@@ -43,7 +45,7 @@ def menu
   user_choice = gets.strip.to_i
   if user_choice == 1
     wallet = Wallet.new(@money)
-    wallet.money_total
+    wallet.wallet_menu
     menu
   elsif user_choice == 2
     play_slots

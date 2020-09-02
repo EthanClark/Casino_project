@@ -8,7 +8,7 @@ class Dub_r_not
   def initialize(money)
     @bet_amount = 0
     @money = money
-    pid = fork{ exec 'afplay', "poker_face.mp3" }
+    # pid = fork{ exec 'afplay', "poker_face.mp3" }
   end
 
   def double_or_nothing
@@ -26,8 +26,7 @@ EOF
     puts "For each win you recieve +50% on your bet amount"
     puts "Option to double each win, but can lose it all"
     puts "_________________________________________________"
-    puts "Here's your current balance:"
-    puts "$#{@money}"
+    puts "Here's your current balance: $#{@money}"
     puts "_________________________________________________"
     puts "Bet amount"
     puts "1) $10"
