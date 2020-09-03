@@ -2,13 +2,12 @@
 # winning numbers 2, 4, 6, 8, 12
 # losing numbers 3, 5, 7, 9, 11
 # can do a double or nothing
-require 'pry'
 
 class Dub_r_not
   def initialize(money)
     @bet_amount = 0
     @money = money
-    # pid = fork{ exec 'afplay', "poker_face.mp3" }
+    pid = fork{ exec 'afplay', "poker_face.mp3" }
   end
 
   def double_or_nothing

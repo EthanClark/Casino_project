@@ -12,6 +12,7 @@ require_relative 'dice'
 require_relative 'wallet'
 require_relative 'hilo'
 require_relative 'dice_casino'
+require_relative 'slot'
 
 def welcome
   puts "__________________________________________________"
@@ -27,7 +28,7 @@ EOF
   puts "__________________________________________________"
   puts 'Welcome to the best Casino ever!'
   puts 'What is your name?'
-  @user_name = gets.chomp
+  @user_name = gets.chomp.capitalize
   puts 'How much money would you like to deposit?'
   @money = gets.chomp.to_f
 end
@@ -48,7 +49,8 @@ def menu
     wallet.wallet_menu
     menu
   elsif user_choice == 2
-    play_slots
+    play_slots = Slots.new(@money)
+    play_slots.slot_menu
     menu
   elsif user_choice == 3
     hilo = Hilo.new(@money)
